@@ -103,3 +103,6 @@ class MyGeoDataFrame:
             if religion != "None":
                 self.gpdf.loc[0, self.key_tag] = religion
                 return self.gpdf
+
+    def test_function(self):
+        pass
