@@ -46,7 +46,12 @@ class Queries:
     man_made_node_to_get = {"chimney", "communications_tower", "cross", "mast",
                             "obelisk", "stupa", "tower", "water_tap", "water_well",
                             "water_tower", "watermill", "windmill"}
-    man_made_tower_type_not_to_get = {"ad", "advertisement", "advertising", "lighting"}
+    man_made_tower_type_not_to_get = {"ad", "advertisement", "advertising", "lighting", "Gólyafészek",
+                                      "gólyafészek", "Söréttorony", "aircraft_control", "beacon", "campanile", "church",
+                                      "clock", "concrete", "control", "crossing", "defensive", "drill_rig", "floodlight",
+                                      "geodetic_survey", "industrial", "indusxtrial", "lightning_rod", "mast", "meteo",
+                                      "monitoring", "navigációs", "oil_tower", "sport", "technológia", "templomtorony",
+                                      "watchtower", "weather"}
     man_made_line_to_get = {"cutline", "embankment", "groyne", "goods_conveyor", "pier"}
     man_made_area_to_get = {"antenna", "bridge", "gasometer", "monitoring_station", "pier",
                             "pipeline", "pumping_station", "silo", "storage_tank", "tailings_ponds", "tower",
