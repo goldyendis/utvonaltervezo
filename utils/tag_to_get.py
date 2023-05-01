@@ -26,7 +26,7 @@ class Queries:
                            "secondary", "secondary_link", "service", "services", "steps", "tertiary", "tertiary_link",
                            "track", "trunk", "trunk_link", "unclassified"}
     highway_area_to_get = {"pedestrian", "platform", "services", "rest_area", }
-    historic_node_to_get = {"archaeological_site", "castle", "fort", "church"
+    historic_node_to_get = {"archaeological_site", "castle", "fort", "church", "mine",
                             "memorial", "mine_shaft", "monastery", "monument", "ruins",
                             "tomb", "wayside_cross", "wayside_shrine"}
     historic_line_to_get = {"castle_wall", "citywalls", "ruins"}
