@@ -36,7 +36,7 @@ class Queries:
                            "commercial", "residential", "retail", "industrial", "garages", "landfill", "railway",
                            "cemetery", "recreation_ground", "religious", "quarry", "military", "basin", "reservoir",
                            "scrub", "construction", "education", "winter_sports"}
-    leisure_node_to_get = {"bathing_place", "beach_resort", "firepit", "fishing", "horse_riding", "marina",
+    leisure_node_to_get = {"bathing_place", "beach_resort", "firepit", "fishing", "marina",
                            "picnic_table", "slipway", "swimming_area", "water_park"}
     leisure_line_to_get = {"track"}
     leisure_area_to_get = {"bathing_place", "beach_resort", "dog_park", "firepit", "fishing", "fitness_station",
