@@ -39,7 +39,6 @@ class OSMWayHighway(AbstractOSM):
 
 class OSMNodeHighway(AbstractOSM):
     def __init__(self, osm_feature: OSMWay, key_tag: str) -> None:
-        print(*osm_feature.tags)
         self.dataframe = MyGeoDataFrame(osm_feature, key_tag)
         super(OSMNodeHighway, self).__init__(dataframe=self.dataframe)
         if osm_feature.tags.get("highway") == "motorway_junction":

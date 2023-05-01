@@ -51,5 +51,5 @@ class OSMHandlerNode(o.SimpleHandler):
             OSMFactory.create_factory(osm_feature=n, key_tag="tourism")
         elif n.tags.get("military") in Queries.military_node_to_get:
             OSMFactory.create_factory(osm_feature=n, key_tag="military")
-        # self.count += 1
-        # print(f"Point:  {self.count}")
+        self.count += 1
+        print(f"Point:  {self.count}")

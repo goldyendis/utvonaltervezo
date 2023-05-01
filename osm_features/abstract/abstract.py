@@ -20,41 +20,40 @@ class OSMFactory:
         :param osm_feature: The osmium.osm.OSMObject object which is under process right now
         :param key_tag: Name of the layer
         """
-        # if issubclass(type(osm_feature), Area):
-        #     if key_tag == "landuse":
-        #         OSMAreaLanduse(osm_feature, key_tag)
-        #     elif key_tag == "natural":
-        #         OSMAreaNatural(osm_feature, key_tag)
-        #     elif key_tag == "highway":
-        #         OSMAreaHighway(osm_feature, key_tag)
-        #     elif key_tag == "building":
-        #         OSMAreaBuilding(osm_feature, key_tag)
-        #     else:
-        #         OSMCommon(osm_feature, key_tag)
-        # if issubclass(type(osm_feature), Way):
-        #     if key_tag == "highway":
-        #         OSMWayHighway(osm_feature, key_tag)
-        #     elif key_tag == "railway":
-        #         OSMWayRailway(osm_feature, key_tag)
-        #     elif key_tag == "aeroway":
-        #         OSMWayAeroway(osm_feature, key_tag)
-        #     elif key_tag == "waterway":
-        #         OSMWayWaterway(osm_feature, key_tag)
-        #     else:
-        #         OSMCommon(osm_feature, key_tag)
-        if issubclass(type(osm_feature), Node):
-            # if key_tag == "natural":
-            #     OSMNodeNatural(osm_feature, key_tag)
+        if issubclass(type(osm_feature), Area):
+            if key_tag == "landuse":
+                OSMAreaLanduse(osm_feature, key_tag)
+            elif key_tag == "natural":
+                OSMAreaNatural(osm_feature, key_tag)
+            elif key_tag == "highway":
+                OSMAreaHighway(osm_feature, key_tag)
+            elif key_tag == "building":
+                OSMAreaBuilding(osm_feature, key_tag)
+            else:
+                OSMCommon(osm_feature, key_tag)
+        if issubclass(type(osm_feature), Way):
             if key_tag == "highway":
-            # elif key_tag == "highway":
+                OSMWayHighway(osm_feature, key_tag)
+            elif key_tag == "railway":
+                OSMWayRailway(osm_feature, key_tag)
+            elif key_tag == "aeroway":
+                OSMWayAeroway(osm_feature, key_tag)
+            elif key_tag == "waterway":
+                OSMWayWaterway(osm_feature, key_tag)
+            else:
+                OSMCommon(osm_feature, key_tag)
+        if issubclass(type(osm_feature), Node):
+            if key_tag == "natural":
+                OSMNodeNatural(osm_feature, key_tag)
+            elif key_tag == "highway":
                 OSMNodeHighway(osm_feature, key_tag)
-            # elif key_tag == "railway":
-            #     OSMNodeRailway(osm_feature, key_tag)
-            # elif key_tag == "man_made":
-            #     OSMNodeManMade(osm_feature, key_tag)
-            # elif key_tag == "place":
-            #     OSMNodePlace(osm_feature, key_tag)
-            # elif key_tag == "amenity":
-            #     OSMNodeAmenity(osm_feature, key_tag)
-            # else:
-            #     OSMCommon(osm_feature, key_tag)
+            elif key_tag == "railway":
+                OSMNodeRailway(osm_feature, key_tag)
+            elif key_tag == "man_made":
+                OSMNodeManMade(osm_feature, key_tag)
+            elif key_tag == "place":
+                OSMNodePlace(osm_feature, key_tag)
+            elif key_tag == "amenity":
+                OSMNodeAmenity(osm_feature, key_tag)
+            else:
+                OSMCommon(osm_feature, key_tag)
