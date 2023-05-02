@@ -121,6 +121,7 @@ class MyGeoDataFrame:
         if man_made in simple_man_made_features:
             """Easily identifiable man_made objects"""
             self.gpdf.loc[0, self.key_tag] = man_made
+            print("SIMPLE", self.gpdf)
             return self.gpdf
         elif man_made == "mast":
             """Man_made tag does not descriptive enough. Have to check the tower:type tag too.
@@ -128,46 +129,55 @@ class MyGeoDataFrame:
             if tower_type in mast_comm_towers:
                 """Clear tower tags which are listed in the mast_comm_tower"""
                 self.gpdf.loc[0, self.key_tag] = "communications_tower"
+                print("MAST COMM", self.gpdf)
                 return self.gpdf
             elif tower_type == "None":
                 """Search in the name attribute, and determine if the mast is a communications_tower"""
                 if any(name.lower() in element for element in mast_from_name_comm_towers):
                     self.gpdf.loc[0, self.key_tag] = "communications_tower"
-                    print("MAST BY NAME", name)
+                    print("MAST BY NAME", self.gpdf)
                     return self.gpdf
             else:
                 self.gpdf.loc[0, self.key_tag] = "None"
+                print("USELESS", self.gpdf)
                 return self.gpdf
         elif man_made == "tower":
             """Man_made tag does not descriptive enough. Have to check the tower:type tag too.
             Tower tag contains communications_towers, observation_towers, bell_towers."""
             if tower_type.lower() == "bell_tower":
                 self.gpdf.loc[0, self.key_tag] = "bell_tower"
+                print("TOWER  BELL", self.gpdf)
                 return self.gpdf
             elif any(tag in tower_type.lower() for tag in tower_observation):
                 "Tag that hint that it is an observation tower"
                 self.gpdf.loc[0, self.key_tag] = "observation"
+                print("TOWER KILÁTÓ", self.gpdf)
                 return self.gpdf
             elif any(tag in tower_type.lower() for tag in tower_comm):
                 "Tag that hint that it is a communication tower"
                 self.gpdf.loc[0, self.key_tag] = "communications_tower"
+                print("TOWER COMM", self.gpdf)
                 return self.gpdf
             elif tower_type == "None":
                 """Search in the name attribute, and determine if the mast is an observation tower,
                  a bell tower or a communications tower"""
                 if any(tag in name.lower() for tag in tower_observation):
                     self.gpdf.loc[0, self.key_tag] = "observation"
-                    print("Tower BY NAME", name)
+                    print("Tower BY NAME KILÁTÓ", self.gpdf)
                     return self.gpdf
                 elif any(tag in name.lower() for tag in tower_comm):
                     self.gpdf.loc[0, self.key_tag] = "communications_tower"
-                    print("Tower BY NAME", name)
+                    print("Tower BY NAME COMM", self.gpdf)
                     return self.gpdf
                 elif name.lower().find("harang") > -1:
                     self.gpdf.loc[0, self.key_tag] = "bell_tower"
-                    print("Tower BY NAME", name)
+                    print("Tower BY NAME HARANG", self.gpdf)
                     return self.gpdf
-            else:
-                self.gpdf.loc[0, self.key_tag] = "None"
-                return self.gpdf
-
+                else:
+                    self.gpdf.loc[0, self.key_tag] = "None"
+                    print("USELESS", self.gpdf)
+                    return self.gpdf
+        else:
+            self.gpdf.loc[0, self.key_tag] = "None"
+            print("USELESS")
+            return self.gpdf
