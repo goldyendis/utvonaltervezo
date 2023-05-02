@@ -9,8 +9,8 @@ class OSMNodeAmenity(AbstractOSM):
         self.dataframe = MyGeoDataFrame(osm_feature, key_tag)
         super(OSMNodeAmenity, self).__init__(dataframe=self.dataframe)
         super().create_geometry()
-        self.dataframe.gpdf = self.manipulate_dataframe()
         if self.dataframe.gpdf is not None:
+            self.dataframe.gpdf = self.manipulate_dataframe()
             super().export_data()
 
     def manipulate_dataframe(self) -> geopandas.GeoDataFrame:
