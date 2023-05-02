@@ -1,6 +1,6 @@
 import osmium as o
 from osmium.osm import Area
-from osm_features.abstract.abstract import OSMFactory
+from osm_features.abstract.factory import OSMFactory
 
 
 class OSMHandlerBuilding(o.SimpleHandler):

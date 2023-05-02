@@ -1,6 +1,6 @@
 import osmium as o
 from osmium.osm import Way
-from osm_features.abstract.abstract import OSMFactory
+from osm_features.abstract.factory import OSMFactory
 from utils.tag_to_get import Queries
 
 
