@@ -14,8 +14,9 @@ class OSMNodeManMade(AbstractOSM):
 
     def manipulate_dataframe(self) -> geopandas.GeoDataFrame:
         self.dataframe.gpdf = super().set_dataframe()
-        self.dataframe.gpdf = self.dataframe.extra_columns(attributes=["tower:type"])
-        self.dataframe.gpdf = self.dataframe.rename_column(original="tower:type", changed="tower_type")
+        self.dataframe.gpdf = self.dataframe.get_man_made_value()
+        # self.dataframe.gpdf = self.dataframe.extra_columns(attributes=["tower:type"])
+        # self.dataframe.gpdf = self.dataframe.rename_column(original="tower:type", changed="tower_type")
         self.dataframe.gpdf = self.dataframe.reduce_columns(
             attributes=[self.dataframe.key_tag, "tower_type"])
         return self.dataframe.gpdf

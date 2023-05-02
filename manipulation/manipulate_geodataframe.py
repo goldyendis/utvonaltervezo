@@ -1,4 +1,5 @@
 import geopandas as gpd
+from typing import Set
 
 from utils.schemes import Schemes
 
@@ -44,7 +45,7 @@ class MyGeoDataFrame:
         """
         Change [original] column name to [changed]
         :param original: str | Column name to change
-        :param changed: str | Column name to be changed
+        :param changed:  str | Column name to be changed
         :return: GeoPandas.GeoDataFrame
         """
         self.gpdf.rename(columns={original: changed}, inplace=True)
@@ -53,7 +54,7 @@ class MyGeoDataFrame:
     def extra_columns(self, attributes: list):
         """
         Function to add extra columns to GeoDataFrame except the key columns
-        :param attributes: list[str] | Additional column names to add to GeoDataFrame
+        :param attributes: List[str] | Additional column names to add to GeoDataFrame
         :return: GeoPandas.GeoDataFrame
         """
         for attribute in attributes:
@@ -65,8 +66,8 @@ class MyGeoDataFrame:
         Override the to_column value with the from_column value. Useful for example with churches, where the display
         depend on the religion, not on the fact that it is a church,chapel etc...
         :param from_column: str | Column to get the data from
-        :param to_column: str | Column to put the data
-        :param tag_for : list[str] | if the original(to) column has this value, only then overwrite with the from_column
+        :param to_column:   str | Column to put the data
+        :param tag_for :    List[str] | if the original(to) column has this value, only then overwrite with the from_column
         :return: GeoPandas.GeoDataframe
         """
         if str(self.gpdf.loc[0, from_column]) is not None:
@@ -105,3 +106,68 @@ class MyGeoDataFrame:
                 return self.gpdf
             else:
                 return self.gpdf
+
+    def get_man_made_value(self) -> gpd.GeoDataFrame:
+        man_made: str = str(self.osm_feature.tags.get(self.key_tag))
+        name: str = str(self.osm_feature.tags.get("name"))
+        tower_type: str = str(self.osm_feature.tags.get("tower:type"))
+        simple_man_made_features: Set[str] = {"chimney", "communications_tower", "cross", "obelisk", "stupa",
+                                              "water_tap", "water_tower", "water_well", "watermill", "windmill"}
+        mast_comm_towers: Set[str] = {"antenna", "communication", "radar", "radio"}
+        mast_from_name_comm_towers: Set[str] = {"adó", "antenna", "rádió", "gsm", "tv", "tévé", "mobiltelefon"}
+        tower_observation: Set[str] = {"kilátó", "observ"}
+        tower_comm: Set[str] = {"radio", "rádió", "comm", "radar"}
+
+        if man_made in simple_man_made_features:
+            """Easily identifiable man_made objects"""
+            self.gpdf.loc[0, self.key_tag] = man_made
+            return self.gpdf
+        elif man_made == "mast":
+            """Man_made tag does not descriptive enough. Have to check the tower:type tag too.
+             For MTSZ BaseMap only the Communication towers important from the 'Mast' tag"""
+            if tower_type in mast_comm_towers:
+                """Clear tower tags which are listed in the mast_comm_tower"""
+                self.gpdf.loc[0, self.key_tag] = "communications_tower"
+                return self.gpdf
+            elif tower_type == "None":
+                """Search in the name attribute, and determine if the mast is a communications_tower"""
+                if any(name.lower() in element for element in mast_from_name_comm_towers):
+                    self.gpdf.loc[0, self.key_tag] = "communications_tower"
+                    print("MAST BY NAME", name)
+                    return self.gpdf
+            else:
+                self.gpdf.loc[0, self.key_tag] = "None"
+                return self.gpdf
+        elif man_made == "tower":
+            """Man_made tag does not descriptive enough. Have to check the tower:type tag too.
+            Tower tag contains communications_towers, observation_towers, bell_towers."""
+            if tower_type.lower() == "bell_tower":
+                self.gpdf.loc[0, self.key_tag] = "bell_tower"
+                return self.gpdf
+            elif any(tag in tower_type.lower() for tag in tower_observation):
+                "Tag that hint that it is an observation tower"
+                self.gpdf.loc[0, self.key_tag] = "observation"
+                return self.gpdf
+            elif any(tag in tower_type.lower() for tag in tower_comm):
+                "Tag that hint that it is a communication tower"
+                self.gpdf.loc[0, self.key_tag] = "communications_tower"
+                return self.gpdf
+            elif tower_type == "None":
+                """Search in the name attribute, and determine if the mast is an observation tower,
+                 a bell tower or a communications tower"""
+                if any(tag in name.lower() for tag in tower_observation):
+                    self.gpdf.loc[0, self.key_tag] = "observation"
+                    print("Tower BY NAME", name)
+                    return self.gpdf
+                elif any(tag in name.lower() for tag in tower_comm):
+                    self.gpdf.loc[0, self.key_tag] = "communications_tower"
+                    print("Tower BY NAME", name)
+                    return self.gpdf
+                elif name.lower().find("harang") > -1:
+                    self.gpdf.loc[0, self.key_tag] = "bell_tower"
+                    print("Tower BY NAME", name)
+                    return self.gpdf
+            else:
+                self.gpdf.loc[0, self.key_tag] = "None"
+                return self.gpdf
+

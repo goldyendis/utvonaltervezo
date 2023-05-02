@@ -28,8 +28,7 @@ class OSMHandlerNode(o.SimpleHandler):
         # # TODO public_transport???
         elif n.tags.get("railway") in Queries.railway_node_to_get:
             OSMFactory.create_factory(osm_feature=n, key_tag="railway")
-        elif n.tags.get("man_made") in Queries.man_made_node_to_get \
-                and n.tags.get("tower:type") not in Queries.man_made_tower_type_not_to_get:
+        elif n.tags.get("man_made") in Queries.man_made_node_to_get:
             OSMFactory.create_factory(osm_feature=n, key_tag="man_made")
         elif n.tags.get("place") in Queries.place_node_to_get:
             OSMFactory.create_factory(osm_feature=n, key_tag="place")
@@ -51,5 +50,5 @@ class OSMHandlerNode(o.SimpleHandler):
             OSMFactory.create_factory(osm_feature=n, key_tag="tourism")
         elif n.tags.get("military") in Queries.military_node_to_get:
             OSMFactory.create_factory(osm_feature=n, key_tag="military")
-        self.count += 1
-        print(f"Point:  {self.count}")
+        # self.count += 1
+        # print(f"Point:  {self.count}")
