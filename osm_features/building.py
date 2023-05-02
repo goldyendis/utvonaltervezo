@@ -13,7 +13,7 @@ class OSMAreaBuilding(AbstractOSM):
         super().export_data()
 
     def manipulate_dataframe(self) -> gpd.GeoDataFrame:
-        self.dataframe.gpdf = super().manipulate_dataframe()
+        self.dataframe.gpdf = super().set_dataframe()
         self.dataframe.gpdf = self.dataframe.extra_columns(attributes=["amenity", "shop", "tourism", "leisure",
                                                                        "man_made", "historic"])
         self.dataframe.gpdf.loc[0, "type"] = str("")

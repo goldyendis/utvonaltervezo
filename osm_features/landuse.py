@@ -13,7 +13,7 @@ class OSMAreaLanduse(AbstractOSM):
         super().export_data()
 
     def manipulate_dataframe(self) -> gpd.GeoDataFrame:
-        self.dataframe.gpdf = super().manipulate_dataframe()
+        self.dataframe.gpdf = super().set_dataframe()
         if super().key_tag_value == "basin":
             self.dataframe.gpdf = self.dataframe.rename_column("landuse", "water")
             self.dataframe.key_tag = "water"

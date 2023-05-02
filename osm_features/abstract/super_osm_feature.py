@@ -1,4 +1,4 @@
-from abc import ABC
+from abc import ABC, abstractmethod
 
 import geopandas
 # from main2 import test
@@ -29,6 +29,15 @@ class AbstractOSM(ABC):
     def dataframe(self, value):
         self._dataframe = value
 
+    @abstractmethod
+    def manipulate_dataframe(self) -> geopandas.GeoDataFrame:
+        """
+        Abstract method to be implemented at the child classes.
+        Editing the Geodataframe specifically at child classes.
+        :return: GeoPandas.GeoDataFrame
+        """
+        pass
+
     def create_geometry(self) -> geopandas.GeoDataFrame:
         """Put geometry into the GeoDataframe geometry column
         :return: GeoPandas.GeoDataframe
@@ -38,7 +47,7 @@ class AbstractOSM(ABC):
         self.dataframe.gpdf['geom_type'] = self.dataframe.gpdf.geometry.geom_type
         return self.dataframe.gpdf
 
-    def manipulate_dataframe(self) -> geopandas.GeoDataFrame:
+    def set_dataframe(self) -> geopandas.GeoDataFrame:
         """Set the GeoDataframe columns with attributes
         :return: GeoPandas.GeoDataframe
         """

@@ -12,7 +12,7 @@ class OSMAreaNatural(AbstractOSM):
         super().export_data()
 
     def manipulate_dataframe(self):
-        self.dataframe.gpdf = super().manipulate_dataframe()
+        self.dataframe.gpdf = super().set_dataframe()
         if self.dataframe.osm_feature.tags.get(self.dataframe.key_tag) == "water":
             self.dataframe.key_tag = "water"
             self.dataframe.gpdf.loc[0, "water"] = self.dataframe.osm_feature.tags.get(self.dataframe.key_tag)
@@ -40,7 +40,7 @@ class OSMNodeNatural(AbstractOSM):
         super().export_data()
 
     def manipulate_dataframe(self):
-        self.dataframe.gpdf = super().manipulate_dataframe()
+        self.dataframe.gpdf = super().set_dataframe()
         self.dataframe.gpdf = self.dataframe.extra_columns(attributes=["ele"])
         self.dataframe.gpdf = self.dataframe.reduce_columns(
             attributes=[self.dataframe.key_tag, "ele"])

@@ -15,7 +15,7 @@ class OSMWayRailway(AbstractOSM):
         super().export_data(filename="railway_egyben")
 
     def manipulate_dataframe(self) -> geopandas.GeoDataFrame:
-        self.dataframe.gpdf = super().manipulate_dataframe()
+        self.dataframe.gpdf = super().set_dataframe()
         self.dataframe.gpdf = self.dataframe.extra_columns(
             attributes=["bridge", "tunnel", "service", "usage", "station"])
         self.dataframe.gpdf = self.dataframe.reduce_columns(
@@ -32,7 +32,7 @@ class OSMNodeRailway(AbstractOSM):
         super().export_data()
 
     def manipulate_dataframe(self) -> geopandas.GeoDataFrame:
-        self.dataframe.gpdf = super().manipulate_dataframe()
+        self.dataframe.gpdf = super().set_dataframe()
         self.dataframe.gpdf = self.dataframe.extra_columns(attributes=["station", "subway"])
         self.dataframe.gpdf = self.dataframe.reduce_columns(
             attributes=[self.dataframe.key_tag, "station", "subway"])

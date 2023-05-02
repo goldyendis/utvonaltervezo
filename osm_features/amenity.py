@@ -13,7 +13,7 @@ class OSMNodeAmenity(AbstractOSM):
         super().export_data()
 
     def manipulate_dataframe(self) -> geopandas.GeoDataFrame:
-        self.dataframe.gpdf = super().manipulate_dataframe()
+        self.dataframe.gpdf = super().set_dataframe()
         if self.key_tag_value == "place_of_worship":
             self.dataframe.gpdf = self.dataframe.get_place_of_worship_value()
         self.dataframe.gpdf = self.dataframe.reduce_columns(

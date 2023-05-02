@@ -15,6 +15,6 @@ class OSMCommon(AbstractOSM):
 
     def manipulate_dataframe(self) -> gpd.GeoDataFrame:
         """Unique dataframe attribute manipulation"""
-        self.dataframe.gpdf = super().manipulate_dataframe()
+        self.dataframe.gpdf = super().set_dataframe()
         self.dataframe.gpdf = self.dataframe.reduce_columns(attributes=[self.dataframe.key_tag])
         return self.dataframe.gpdf
