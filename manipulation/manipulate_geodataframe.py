@@ -108,6 +108,10 @@ class MyGeoDataFrame:
                 return self.gpdf
 
     def get_man_made_value(self) -> gpd.GeoDataFrame:
+        """
+        Process the man_made tag with the tower_type tag, to normalize the return value
+        :return: GeoPandas.GeoDataframe
+        """
         man_made: str = str(self.osm_feature.tags.get(self.key_tag))
         name: str = str(self.osm_feature.tags.get("name"))
         tower_type: str = str(self.osm_feature.tags.get("tower:type"))
