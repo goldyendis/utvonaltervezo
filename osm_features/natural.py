@@ -15,7 +15,7 @@ class OSMAreaNatural(AbstractOSM):
         self.dataframe.gpdf = super().set_dataframe()
         if self.dataframe.osm_feature.tags.get(self.dataframe.key_tag) == "water":
             self.dataframe.key_tag = "water"
-            self.dataframe.gpdf.loc[0, "water"] = self.dataframe.osm_feature.tags.get(self.dataframe.key_tag)
+            self.dataframe.gpdf.loc[0, "water"] = str(self.dataframe.osm_feature.tags.get(self.dataframe.key_tag))
             self.dataframe.gpdf = self.dataframe.reduce_columns(attributes=[self.dataframe.key_tag])
 
         elif super().key_tag_value == "wood" or super().key_tag_value == "scrub":

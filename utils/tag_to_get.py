@@ -58,7 +58,7 @@ class Queries:
                             "wastewater_plant", "water_works"}
     military_node_to_get = {"airfield"}
     military_area_to_get = {"airfield", "ammunition", "barracks", "danger_area", "naval_base", "range", "training_area"}
-    natural_node_to_get = {"bay", "beach", "cape", "isthmus", "peninsula", "spring", "water", "cave_entrance", "cliff",
+    natural_node_to_get = {"bay", "beach", "cape", "isthmus", "peninsula", "spring", "cave_entrance", "cliff",
                            "peak", "rock", "saddle", "sinkhole", "hot_spring", "cave_entrance", "stone", "valley"}
     natural_line_to_get = {"cliff", "ridge", "tree_row", "valley"}
     natural_area_to_get = {"scrub", "wood", "water", "wetland", "cave_entrance", "beach", "shingle",

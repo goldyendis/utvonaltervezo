@@ -33,7 +33,7 @@ class AbstractOSM(ABC):
     def manipulate_dataframe(self) -> geopandas.GeoDataFrame:
         """
         Abstract method to be implemented at the child classes.
-        Editing the Geodataframe specifically at child classes.
+        Editing the Geodataframe specifically as the child class need.
         :return: GeoPandas.GeoDataFrame
         """
         pass
