@@ -33,7 +33,7 @@ class OSMNodeRailway(AbstractOSM):
 
     def manipulate_dataframe(self) -> geopandas.GeoDataFrame:
         self.dataframe.gpdf = super().set_dataframe()
-        self.dataframe.gpdf = self.dataframe.extra_columns(attributes=["station", "subway"])
+        self.dataframe.gpdf = self.dataframe.extra_columns(attributes=["station"])
         self.dataframe.gpdf = self.dataframe.reduce_columns(
-            attributes=[self.dataframe.key_tag, "station", "subway"])
+            attributes=[self.dataframe.key_tag, "station"])
         return self.dataframe.gpdf
