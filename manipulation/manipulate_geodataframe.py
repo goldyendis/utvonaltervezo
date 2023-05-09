@@ -41,7 +41,7 @@ class MyGeoDataFrame:
             Schemes(attributes=attributes).schema)]
         return self.gpdf
 
-    def rename_column(self, original: str, changed: str):
+    def rename_column(self, original: str, changed: str) -> gpd.GeoDataFrame:
         """
         Change [original] column name to [changed]
         :param original: str | Column name to change
@@ -51,7 +51,7 @@ class MyGeoDataFrame:
         self.gpdf.rename(columns={original: changed}, inplace=True)
         return self.gpdf
 
-    def extra_columns(self, attributes: list):
+    def extra_columns(self, attributes: list) -> gpd.GeoDataFrame:
         """
         Function to add extra columns to GeoDataFrame except the key columns
         :param attributes: List[str] | Additional column names to add to GeoDataFrame
@@ -61,7 +61,7 @@ class MyGeoDataFrame:
             self.gpdf.loc[0, attribute] = str(self.osm_feature.tags.get(attribute))
         return self.gpdf
 
-    def swap_column_values(self, from_column: str, to_column: str, tag_for: list = None):
+    def swap_column_values(self, from_column: str, to_column: str, tag_for: list = None) -> gpd.GeoDataFrame:
         """
         Override the to_column value with the from_column value. Useful for example with churches, where the display
         depend on the religion, not on the fact that it is a church,chapel etc...
@@ -80,7 +80,7 @@ class MyGeoDataFrame:
 
     def get_place_of_worship_value(self) -> gpd.GeoDataFrame:
         """
-        Process the place_of_worship tag, to get back either it is a chapel,church and to what religion belongs to.
+        Process the place_of_worship tag, to get back as a useful representation.
         Suppose only catholic items can be other than "church"
         :return: GeoPandas.GeoDataframe
         """
