@@ -76,7 +76,7 @@ class Queries:
                            "tram", "platform"}
     railway_area_to_get = {"platform", "station"}
     shop_node_to_get = {"convenience", "dairy", "general", "supermarket", "beverages", "greengrocer", "wholesale", }
-    tourism_node_to_get = {"alpine_hut", "artwork", "apartment", "aquarium", "attraction", "camp_pitch", "camp_site",
+    tourism_node_to_get = {"alpine_hut", "artwork", "apartment", "camp_pitch", "camp_site",
                            "caravan_site", "chalet", "guest_house", "hostel", "hotel", "motel", "museum",
                            "picnic_site", "theme_park", "viewpoint", "wilderness_hut", "zoo"}
     tourism_area_to_get = {"alpine_hut", "apartment", "aquarium", "attraction", "camp_pitch", "camp_site",
