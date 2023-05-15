@@ -82,7 +82,7 @@ class Queries:
     tourism_area_to_get = {"alpine_hut", "apartment", "aquarium", "attraction", "camp_pitch", "camp_site",
                            "caravan_site", "chalet", "guest_house", "hostel", "hotel", "motel", "museum",
                            "picnic_site", "theme_park", "wilderness_hut", "zoo"}
-    waterway_node_to_get = {"dock", "boatyard", "waterfall", "lock_gate", "weir", "sluice_gate", }
+    waterway_node_to_get = {"dock", "waterfall", "lock_gate", "weir", "sluice_gate", }
     waterway_line_to_get = {"river", "stream", "canal", "drain", "ditch", "fairway", "dam", "weir", "lock_gate", }
     waterway_area_to_get = {"dock", "boatyard", "dam", "sluice_gate"}
     water_node_to_get = {"lake", "pond"}
