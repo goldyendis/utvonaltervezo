@@ -63,7 +63,7 @@ class Queries:
     natural_line_to_get = {"cliff", "ridge", "tree_row", "valley"}
     natural_area_to_get = {"scrub", "wood", "water", "wetland", "cave_entrance", "beach", "shingle",
                            "shoal", "rock", "scree", "stone", "sinkhole", "sand", "bare_rock"}
-    place_node_to_get = {"city", "country", "county", "district", "islet", "square", "island", "allotments",
+    place_node_to_get = {"city", "county", "district", "islet", "square", "island", "allotments",
                          "isolated_dwelling", "hamlet", "isolated_dwelling", "locality", "neighbourhood", "quarter",
                          "suburb", "town", "village", "city_block", "borough", "state", "region", "province"}
     place_area_to_get = {"locality", "square", "islet", "island", "allotments", "farm", "isolated_dwelling", "hamlet",
