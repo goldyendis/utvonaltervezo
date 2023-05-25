@@ -23,7 +23,7 @@ class Queries:
     highway_node_to_get = {"bus_stop", "motorway_junction"}
     highway_line_to_get = {"bridleway", "cycleway", "footway", "living_street", "motorway", "motorway_link", "path",
                            "pedestrian", "platform", "primary", "primary_link", "raceway", "residential", "road",
-                           "secondary", "secondary_link", "service", "services", "steps", "tertiary", "tertiary_link",
+                           "secondary", "secondary_link", "service", "steps", "tertiary", "tertiary_link",
                            "track", "trunk", "trunk_link", "unclassified"}
     highway_area_to_get = {"pedestrian", "platform", "services", "rest_area", }
     historic_node_to_get = {"archaeological_site", "castle", "fort", "church", "mine",
