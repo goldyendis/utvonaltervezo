@@ -1,10 +1,12 @@
+from osmium.osm import OSMObject
+
 from manipulation.manipulate_geodataframe import MyGeoDataFrame
 from utils.new_typing import OSMArea
 from osm_features.abstract.super_osm_feature import AbstractOSM
 
 
 class OSMAreaNatural(AbstractOSM):
-    def __init__(self, osm_feature: OSMArea, key_tag: str) -> None:
+    def __init__(self, osm_feature: OSMObject, key_tag: str) -> None:
         self.dataframe = MyGeoDataFrame(osm_feature, key_tag)
         super(OSMAreaNatural, self).__init__(dataframe=self.dataframe)
         super().create_geometry()
@@ -32,7 +34,7 @@ class OSMAreaNatural(AbstractOSM):
 
 
 class OSMNodeNatural(AbstractOSM):
-    def __init__(self, osm_feature: OSMArea, key_tag: str) -> None:
+    def __init__(self, osm_feature: OSMObject, key_tag: str) -> None:
         self.dataframe = MyGeoDataFrame(osm_feature, key_tag)
         super(OSMNodeNatural, self).__init__(dataframe=self.dataframe)
         super().create_geometry()

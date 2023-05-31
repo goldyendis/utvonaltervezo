@@ -1,11 +1,12 @@
 import geopandas
+from osmium.osm import OSMObject
+
 from manipulation.manipulate_geodataframe import MyGeoDataFrame
-from utils.new_typing import OSMNode
 from osm_features.abstract.super_osm_feature import AbstractOSM
 
 
 class OSMNodeManMade(AbstractOSM):
-    def __init__(self, osm_feature: OSMNode, key_tag: str) -> None:
+    def __init__(self, osm_feature: OSMObject, key_tag: str) -> None:
         self.dataframe = MyGeoDataFrame(osm_feature, key_tag)
         super(OSMNodeManMade, self).__init__(dataframe=self.dataframe)
         super().create_geometry()

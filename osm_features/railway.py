@@ -1,11 +1,12 @@
 import geopandas
+from osmium.osm import OSMObject
+
 from manipulation.manipulate_geodataframe import MyGeoDataFrame
-from utils.new_typing import OSMWay, OSMNode
 from osm_features.abstract.super_osm_feature import AbstractOSM
 
 
 class OSMWayRailway(AbstractOSM):
-    def __init__(self, osm_feature: OSMWay, key_tag: str) -> None:
+    def __init__(self, osm_feature: OSMObject, key_tag: str) -> None:
         self.dataframe = MyGeoDataFrame(osm_feature, key_tag)
         super(OSMWayRailway, self).__init__(dataframe=self.dataframe)
         super().create_geometry()
@@ -24,7 +25,7 @@ class OSMWayRailway(AbstractOSM):
 
 
 class OSMNodeRailway(AbstractOSM):
-    def __init__(self, osm_feature: OSMNode, key_tag: str) -> None:
+    def __init__(self, osm_feature: OSMObject, key_tag: str) -> None:
         self.dataframe = MyGeoDataFrame(osm_feature, key_tag)
         super(OSMNodeRailway, self).__init__(dataframe=self.dataframe)
         super().create_geometry()

@@ -1,11 +1,12 @@
 import geopandas
+from osmium.osm import OSMObject
+
 from manipulation.manipulate_geodataframe import MyGeoDataFrame
-from utils.new_typing import OSMArea, OSMWay
 from osm_features.abstract.super_osm_feature import AbstractOSM
 
 
 class OSMAreaHighway(AbstractOSM):
-    def __init__(self, osm_feature: OSMArea, key_tag: str) -> None:
+    def __init__(self, osm_feature: OSMObject, key_tag: str) -> None:
         self.dataframe = MyGeoDataFrame(osm_feature, key_tag)
         super(OSMAreaHighway, self).__init__(dataframe=self.dataframe)
         super().create_geometry()
@@ -20,7 +21,7 @@ class OSMAreaHighway(AbstractOSM):
 
 
 class OSMWayHighway(AbstractOSM):
-    def __init__(self, osm_feature: OSMWay, key_tag: str) -> None:
+    def __init__(self, osm_feature: OSMObject, key_tag: str) -> None:
         self.dataframe = MyGeoDataFrame(osm_feature, key_tag)
         super(OSMWayHighway, self).__init__(dataframe=self.dataframe)
         super().create_geometry()
@@ -38,7 +39,7 @@ class OSMWayHighway(AbstractOSM):
 
 
 class OSMNodeHighway(AbstractOSM):
-    def __init__(self, osm_feature: OSMWay, key_tag: str) -> None:
+    def __init__(self, osm_feature: OSMObject, key_tag: str) -> None:
         self.dataframe = MyGeoDataFrame(osm_feature, key_tag)
         super(OSMNodeHighway, self).__init__(dataframe=self.dataframe)
         if osm_feature.tags.get("highway") == "motorway_junction":
