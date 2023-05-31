@@ -29,7 +29,7 @@ class Queries:
     historic_node_to_get = {"archaeological_site", "castle", "fort", "church", "mine",
                             "memorial", "mine_shaft", "monastery", "monument", "ruins",
                             "tomb", "wayside_cross", "wayside_shrine"}
-    historic_line_to_get = {"castle_wall", "citywalls", "ruins"}
+    historic_line_to_get = {"citywalls", "ruins"}
     historic_area_to_get = {"archaeological_site", "castle", "castle_wall", "citywalls", "fort", "church",
                             "memorial", "monastery", "monument", "ruins", "wayside_cross", "wayside_shrine"}
     landuse_area_to_get = {"allotments", "orchard", "vineyard", "forest", "farmyard", "farmland", "brownfield",
