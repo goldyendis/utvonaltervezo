@@ -5,7 +5,7 @@ from osm_features.building import OSMAreaBuilding
 from osm_features.common import OSMCommon
 from osm_features.highway import OSMAreaHighway, OSMWayHighway, OSMNodeHighway
 from osm_features.landuse import OSMAreaLanduse
-from osm_features.man_made import OSMNodeManMade
+from osm_features.man_made import OSMNodeManMade, OSMWayManMade
 from osm_features.natural import OSMAreaNatural, OSMNodeNatural
 from osm_features.place import OSMNodePlace
 from osm_features.railway import OSMWayRailway, OSMNodeRailway
@@ -40,6 +40,8 @@ class OSMFactory:
                 OSMWayAeroway(osm_feature, key_tag)
             elif key_tag == "waterway":
                 OSMWayWaterway(osm_feature, key_tag)
+            elif key_tag == "man_made":
+                OSMWayManMade(osm_feature, key_tag)
             else:
                 OSMCommon(osm_feature, key_tag)
         if issubclass(type(osm_feature), Node):
