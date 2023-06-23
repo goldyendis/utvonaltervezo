@@ -31,7 +31,7 @@ class Queries:
                             "tomb", "wayside_cross", "wayside_shrine"}
     historic_area_to_get = {"archaeological_site", "castle", "castle_wall", "citywalls", "fort", "church",
                             "memorial", "monastery", "monument", "ruins", "wayside_cross", "wayside_shrine"}
-    landuse_area_to_get = {"allotments", "orchard", "vineyard", "forest", "farmyard", "farmland", "brownfield",
+    landuse_area_to_get = {"allotments", "orchard", "vineyard", "forest", "farmyard", "brownfield",
                            "commercial", "residential", "retail", "industrial", "garages", "landfill", "railway",
                            "cemetery", "recreation_ground", "religious", "quarry", "military", "basin", "reservoir",
                            "scrub", "construction", "education", "winter_sports"}
@@ -73,7 +73,7 @@ class Queries:
     railway_node_to_get = {"halt", "station", "tram_stop", }
     railway_line_to_get = {"funicular", "light_rail", "miniature", "narrow_gauge", "construction", "rail", "subway",
                            "tram", "platform"}
-    railway_area_to_get = {"platform", "station"}
+    railway_area_to_get = {"platform"}
     shop_node_to_get = {"convenience", "dairy", "general", "supermarket", "beverages", "greengrocer", "wholesale", }
     tourism_node_to_get = {"alpine_hut", "artwork", "apartment", "camp_site",
                            "caravan_site", "chalet", "guest_house", "hostel", "hotel", "motel", "museum",
@@ -83,7 +83,7 @@ class Queries:
                            "picnic_site", "theme_park", "wilderness_hut", "zoo"}
     waterway_node_to_get = {"dock", "waterfall", "lock_gate", "weir", "sluice_gate", }
     waterway_line_to_get = {"river", "stream", "canal", "drain", "ditch", "dam", "weir", "lock_gate", }
-    waterway_area_to_get = {"dock", "boatyard", "dam", "sluice_gate"}
+    # waterway_area_to_get = {"dock", "boatyard", "dam", "sluice_gate"}
     water_node_to_get = {"lake", "pond"}
     water_area_to_get = {"river", "oxbow", "canal", "ditch", "lock", "fish_pass", "lake", "reservoir", "pond", "basin",
                          "stream_pool", "reflecting_pool", "moat", "wastewater"}
