@@ -29,8 +29,8 @@ class Queries:
     historic_node_to_get = {"archaeological_site", "castle", "fort", "church", "mine",
                             "memorial", "mine_shaft", "monastery", "monument", "ruins",
                             "tomb", "wayside_cross", "wayside_shrine"}
-    historic_area_to_get = {"archaeological_site", "castle", "castle_wall", "citywalls", "fort", "church",
-                            "memorial", "monastery", "monument", "ruins", "wayside_cross", "wayside_shrine"}
+    historic_area_to_get = {"archaeological_site", "castle", "castle_wall", "citywalls", "church",
+                            "memorial", "monument", "ruins"}
     landuse_area_to_get = {"allotments", "orchard", "vineyard", "forest", "farmyard", "brownfield",
                            "commercial", "residential", "retail", "industrial", "garages", "landfill", "railway",
                            "cemetery", "recreation_ground", "religious", "quarry", "military", "basin", "reservoir",
@@ -52,7 +52,7 @@ class Queries:
                                       "monitoring", "navigációs", "oil_tower", "sport", "technológia", "templomtorony",
                                       "watchtower", "weather"}
     man_made_line_to_get = {"cutline", "embankment", "groyne", "goods_conveyor", "pier"}
-    man_made_area_to_get = {"antenna", "bridge", "gasometer", "monitoring_station", "pier",
+    man_made_area_to_get = {"gasometer", "monitoring_station", "pier",
                             "pipeline", "pumping_station", "silo", "storage_tank", "tailings_ponds", "tower",
                             "wastewater_plant", "water_works"}
     military_node_to_get = {"airfield"}

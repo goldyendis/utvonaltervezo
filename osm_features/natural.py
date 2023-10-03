@@ -1,7 +1,6 @@
 from osmium.osm import OSMObject
 
 from manipulation.manipulate_geodataframe import MyGeoDataFrame
-from utils.new_typing import OSMArea
 from osm_features.abstract.super_osm_feature import AbstractOSM
 
 
