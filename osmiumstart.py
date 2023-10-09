@@ -11,6 +11,7 @@ class OsmiumStart:
     """Class to start the *.osm.pbf processing"""
     def __init__(self) -> None:
         self.file_path = FILE_PATH
+        self.count = 0
         if TEST:
             self.file_path = f"{self.file_path}\\budapest"
             pyrosm.get_data("budapest", directory=self.file_path)

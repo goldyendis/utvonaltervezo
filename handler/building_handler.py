@@ -9,6 +9,7 @@ class OSMHandlerBuilding(o.SimpleHandler):
     def __init__(self) -> None:
         super(OSMHandlerBuilding, self).__init__()
         self.count = 0
+        print("BUILDING INIT")
 
     def area(self, a: Area) -> None:
         """Osmium Area callback, only to process the Building Areas
@@ -16,5 +17,5 @@ class OSMHandlerBuilding(o.SimpleHandler):
         """
         if "building" in a.tags:
             OSMFactory.create_factory(osm_feature=a, key_tag="building")
-        self.count += 1
-        print(f"Building:  {self.count}")
+            print(f"Building Handler:  {self.count}")
+            self.count += 1

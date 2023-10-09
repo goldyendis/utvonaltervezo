@@ -37,5 +37,7 @@ class ExportSHP(Export):
         try:
             self.dataframe.gpdf.to_file(path, index=False, mode="a" if append else "w",
                                         crs="EPSG:3857", encoding="utf-8")
-        except:
-            pass
+        except Exception as e:
+            print(e, filename)
+
+
