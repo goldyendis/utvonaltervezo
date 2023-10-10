@@ -1,3 +1,7 @@
 .mypy_cache
 .idea
+<<<<<<< HEAD
 __pycache__
+=======
+__pycache__
+>>>>>>> 05c954aa764dd35ac7a30d43639d9af0254b1264
