@@ -14,9 +14,10 @@ from osm_features.waterway import OSMWayWaterway
 
 class OSMFactory:
     @staticmethod
-    def create_factory(osm_feature: OSMObject, key_tag: str) -> None:
+    def create_factory(osm_feature: OSMObject, key_tag: str, count: int = None) -> None:
         """
         From the type of the OSMObject and from the layer name(key_tag) decide which class to instantiate
+        :param count: For testing purpose
         :param osm_feature: The osmium.osm.OSMObject object which is under process right now
         :param key_tag: Name of the layer
         """
@@ -28,7 +29,7 @@ class OSMFactory:
             elif key_tag == "highway":
                 OSMAreaHighway(osm_feature, key_tag)
             elif key_tag == "building":
-                OSMAreaBuilding(osm_feature, key_tag)
+                OSMAreaBuilding(osm_feature, key_tag, count)
             else:
                 OSMCommon(osm_feature, key_tag)
         if issubclass(type(osm_feature), Way):

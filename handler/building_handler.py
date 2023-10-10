@@ -8,7 +8,7 @@ class OSMHandlerBuilding(o.SimpleHandler):
 
     def __init__(self) -> None:
         super(OSMHandlerBuilding, self).__init__()
-        self.count = 0
+        self.count = 1
         print("BUILDING INIT")
 
     def area(self, a: Area) -> None:
@@ -16,6 +16,6 @@ class OSMHandlerBuilding(o.SimpleHandler):
         :param a: osmium.osm.Area immutable class object to process
         """
         if "building" in a.tags:
-            OSMFactory.create_factory(osm_feature=a, key_tag="building")
-            print(f"Building Handler:  {self.count}")
+            OSMFactory.create_factory(osm_feature=a, key_tag="building", count = self.count)
+            # print(f"Building Handler:  {self.count}")
             self.count += 1
