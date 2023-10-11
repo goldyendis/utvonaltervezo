@@ -44,5 +44,5 @@ class OSMNodeNatural(AbstractOSM):
         self.dataframe.gpdf = super().set_dataframe()
         self.dataframe.gpdf = self.dataframe.extra_columns(attributes=["ele"])
         self.dataframe.gpdf = self.dataframe.reduce_columns(
-            attributes=[self.dataframe.key_tag, "ele"])
+                attributes=[self.dataframe.key_tag, "ele"])
         return self.dataframe.gpdf

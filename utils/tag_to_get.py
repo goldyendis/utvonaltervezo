@@ -81,7 +81,6 @@ class Queries:
                            "picnic_site", "theme_park", "wilderness_hut", "zoo"}
     waterway_node_to_get = {"dock", "waterfall", "lock_gate", "weir", "sluice_gate", }
     waterway_line_to_get = {"river", "stream", "canal", "drain", "ditch", "dam", "weir", "lock_gate", }
-    # waterway_area_to_get = {"dock", "boatyard", "dam", "sluice_gate"}
     water_node_to_get = {"lake", "pond"}
     water_area_to_get = {"river", "oxbow", "canal", "ditch", "lock", "fish_pass", "lake", "reservoir", "pond", "basin",
                          "stream_pool", "reflecting_pool", "moat", "wastewater"}
