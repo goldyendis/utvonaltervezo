@@ -13,7 +13,7 @@ class OSMHandlerWay(o.SimpleHandler):
 
     def way(self, w: Way) -> None:
         """Osmium Way callback
-        :param w: osmium.osm.Way immutable class object to process
+        :param w: osmium.osm.Way | Immutable class object to process
         """
         if w.tags.get("natural") in Queries.natural_line_to_get:
             OSMFactory.create_factory(osm_feature=w, key_tag="natural")

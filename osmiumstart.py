@@ -10,8 +10,8 @@ from utils.constans import FILE_PATH, TEST
 class OsmiumStart:
     """Class to start the *.osm.pbf processing"""
     def __init__(self) -> None:
-        self.file_path = FILE_PATH
-        self.count = 0
+        self.file_path: str = FILE_PATH
+        self.count: int = 0
         if TEST:
             self.file_path = f"{self.file_path}\\budapest"
             pyrosm.get_data("budapest", directory=self.file_path)
@@ -38,7 +38,7 @@ class OsmiumStart:
     def highway_thread(self) -> None:
         """Separate thread for highway line process by Osmium"""
         handler_highway = OSMHandlerHighway()
-        handler_highway.apply_file(self.osm_file,locations=True)
+        handler_highway.apply_file(self.osm_file, locations=True)
 
     def get_lines(self) -> None:
         """Osmium processor of osm ways"""

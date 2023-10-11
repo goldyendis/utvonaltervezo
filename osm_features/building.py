@@ -7,14 +7,15 @@ import geopandas as gpd
 
 
 class OSMAreaBuilding(AbstractOSM):
+    """Processor of the Building Area OSM Entities"""
     def __init__(self, osm_feature: OSMObject, key_tag: str, count: int = None) -> None:
         self.dataframe = MyGeoDataFrame(osm_feature, key_tag)
         super(OSMAreaBuilding, self).__init__(dataframe=self.dataframe)
         super().create_geometry()
         self.dataframe.gpdf = self.manipulate_dataframe()
-        filenumber = (count//100000)+1
-        ExportSHP(dataframe=self.dataframe).export_feature(geom_type="area",filename=f"building_{filenumber}")
-        print(f"building_{filenumber} as {count} exported")
+        file_number: int = (count//100000)+1
+        ExportSHP(dataframe=self.dataframe).export_feature(geom_type="area", filename=f"building_{file_number}")
+        print(f"building_{file_number} as {count} exported")
 
     def manipulate_dataframe(self) -> gpd.GeoDataFrame:
         self.dataframe.gpdf = super().set_dataframe()

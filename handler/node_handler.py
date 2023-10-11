@@ -13,7 +13,7 @@ class OSMHandlerNode(o.SimpleHandler):
 
     def node(self, n: Node) -> None:
         """Osmium Node callback
-        :param n: osmium.osm.Node immutable class object to process
+        :param n: osmium.osm.Node | Immutable class object to process
         """
         if n.tags.get("natural") in Queries.natural_node_to_get:
             OSMFactory.create_factory(osm_feature=n, key_tag="natural")
@@ -25,7 +25,8 @@ class OSMHandlerNode(o.SimpleHandler):
             name: str = str(n.tags.get("name"))
             if not (n.tags.get("highway") == "motorway_junction" and name.lower().find("pihenő") > -1):
                 OSMFactory.create_factory(osm_feature=n, key_tag="highway")
-        elif n.tags.get("railway") in Queries.railway_node_to_get and n.tags.get("station") not in ["abandoned", "disused"]:
+        elif n.tags.get("railway") in Queries.railway_node_to_get and \
+                n.tags.get("station") not in ["abandoned", "disused"]:
             OSMFactory.create_factory(osm_feature=n, key_tag="railway")
         elif n.tags.get("man_made") in Queries.man_made_node_to_get:
             OSMFactory.create_factory(osm_feature=n, key_tag="man_made")

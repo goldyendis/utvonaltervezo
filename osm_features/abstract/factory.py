@@ -13,6 +13,7 @@ from osm_features.waterway import OSMWayWaterway
 
 
 class OSMFactory:
+    """Decider to choose what kind of OSM Feature is under processing"""
     @staticmethod
     def create_factory(osm_feature: OSMObject, key_tag: str, count: int = None) -> None:
         """

@@ -2,9 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b19e080f-31dc-4a79-a52d-f6aa56a06cea" name="Default Changelist" comment="20230429">
+      <change beforePath="$PROJECT_DIR$/.idea/Osmium.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Osmium.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/handler/area_handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/handler/area_handler.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/handler/building_handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/handler/building_handler.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/handler/highway_line_handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/handler/highway_line_handler.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/handler/node_handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/handler/node_handler.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/osm_features/natural.py" beforeDir="false" afterPath="$PROJECT_DIR$/osm_features/natural.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/osm_features/abstract/factory.py" beforeDir="false" afterPath="$PROJECT_DIR$/osm_features/abstract/factory.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/osmiumstart.py" beforeDir="false" afterPath="$PROJECT_DIR$/osmiumstart.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/utils/tag_to_get.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/tag_to_get.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

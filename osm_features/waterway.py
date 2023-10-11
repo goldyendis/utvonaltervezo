@@ -6,6 +6,7 @@ from osm_features.abstract.super_osm_feature import AbstractOSM
 
 
 class OSMWayWaterway(AbstractOSM):
+    """Processor of the Waterway Line OSM Entities"""
     def __init__(self, osm_feature: OSMObject, key_tag: str) -> None:
         self.dataframe = MyGeoDataFrame(osm_feature, key_tag)
         super(OSMWayWaterway, self).__init__(dataframe=self.dataframe)

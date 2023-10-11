@@ -1,7 +1,6 @@
 from abc import ABC, abstractmethod
 
 import geopandas
-# from main2 import test
 from manipulation.manipulate_geodataframe import MyGeoDataFrame
 from manipulation.export_shp import ExportSHP
 from manipulation.geometry import MyGeometry
@@ -33,7 +32,7 @@ class AbstractOSM(ABC):
     def manipulate_dataframe(self) -> geopandas.GeoDataFrame:
         """
         Abstract method to be implemented at the child classes.
-        Editing the Geodataframe specifically as the child class need.
+        Editing the Geodataframe specifically as the child class needs.
         :return: GeoPandas.GeoDataFrame
         """
         pass
@@ -57,6 +56,6 @@ class AbstractOSM(ABC):
 
     def export_data(self, filename=None) -> None:
         """Export GeoDataframe to file
-        :param filename: str
+        :param filename: str | The name to be export the file.
         """
         ExportSHP(dataframe=self.dataframe).export(filename)

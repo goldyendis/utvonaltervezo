@@ -13,7 +13,7 @@ class OSMHandlerHighway(o.SimpleHandler):
 
     def way(self, w: Way) -> None:
         """Osmium Way callback, only to process the Highway Ways
-        :param w: osmium.osm.Way immutable class object to process
+        :param w: osmium.osm.Way | Immutable class object to process
         """
         if w.tags.get("highway") in Queries.highway_line_to_get:
             OSMFactory.create_factory(osm_feature=w, key_tag="highway")

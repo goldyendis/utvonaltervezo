@@ -6,6 +6,7 @@ from osm_features.abstract.super_osm_feature import AbstractOSM
 
 
 class OSMWayRailway(AbstractOSM):
+    """Processor of the Railway Line OSM Entities"""
     def __init__(self, osm_feature: OSMObject, key_tag: str) -> None:
         self.dataframe = MyGeoDataFrame(osm_feature, key_tag)
         super(OSMWayRailway, self).__init__(dataframe=self.dataframe)
@@ -25,6 +26,7 @@ class OSMWayRailway(AbstractOSM):
 
 
 class OSMNodeRailway(AbstractOSM):
+    """Processor of the Railway Point OSM Entities"""
     def __init__(self, osm_feature: OSMObject, key_tag: str) -> None:
         self.dataframe = MyGeoDataFrame(osm_feature, key_tag)
         super(OSMNodeRailway, self).__init__(dataframe=self.dataframe)

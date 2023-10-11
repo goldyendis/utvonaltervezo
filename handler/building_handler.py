@@ -13,9 +13,8 @@ class OSMHandlerBuilding(o.SimpleHandler):
 
     def area(self, a: Area) -> None:
         """Osmium Area callback, only to process the Building Areas
-        :param a: osmium.osm.Area immutable class object to process
+        :param a: osmium.osm.Area | Immutable class object to process
         """
         if "building" in a.tags:
             OSMFactory.create_factory(osm_feature=a, key_tag="building", count = self.count)
-            # print(f"Building Handler:  {self.count}")
             self.count += 1

@@ -6,7 +6,7 @@ import geopandas as gpd
 
 
 class OSMCommon(AbstractOSM):
-    """OSMObject with the common procedures"""
+    """Processor of OSMObject where nothing extra functionality needed"""
     def __init__(self, osm_feature: OSMObject, key_tag: str) -> None:
         self.dataframe = MyGeoDataFrame(osm_feature, key_tag)
         super(OSMCommon, self).__init__(dataframe=self.dataframe)

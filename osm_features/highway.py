@@ -6,6 +6,7 @@ from osm_features.abstract.super_osm_feature import AbstractOSM
 
 
 class OSMAreaHighway(AbstractOSM):
+    """Processor of the Highway Area OSM Entities"""
     def __init__(self, osm_feature: OSMObject, key_tag: str) -> None:
         self.dataframe = MyGeoDataFrame(osm_feature, key_tag)
         super(OSMAreaHighway, self).__init__(dataframe=self.dataframe)
@@ -21,6 +22,7 @@ class OSMAreaHighway(AbstractOSM):
 
 
 class OSMWayHighway(AbstractOSM):
+    """Processor of the Highway Line OSM Entities"""
     def __init__(self, osm_feature: OSMObject, key_tag: str) -> None:
         self.dataframe = MyGeoDataFrame(osm_feature, key_tag)
         super(OSMWayHighway, self).__init__(dataframe=self.dataframe)
@@ -39,6 +41,7 @@ class OSMWayHighway(AbstractOSM):
 
 
 class OSMNodeHighway(AbstractOSM):
+    """Processor of the Highway Point OSM Entities"""
     def __init__(self, osm_feature: OSMObject, key_tag: str) -> None:
         self.dataframe = MyGeoDataFrame(osm_feature, key_tag)
         super(OSMNodeHighway, self).__init__(dataframe=self.dataframe)

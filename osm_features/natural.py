@@ -5,6 +5,7 @@ from osm_features.abstract.super_osm_feature import AbstractOSM
 
 
 class OSMAreaNatural(AbstractOSM):
+    """Processor of the Natural Area OSM Entities"""
     def __init__(self, osm_feature: OSMObject, key_tag: str) -> None:
         self.dataframe = MyGeoDataFrame(osm_feature, key_tag)
         super(OSMAreaNatural, self).__init__(dataframe=self.dataframe)
@@ -23,7 +24,7 @@ class OSMAreaNatural(AbstractOSM):
             self.dataframe.rename_column("natural", "landuse")
             self.dataframe.key_tag = "landuse"
             if super().key_tag_value == "wood":
-                self.dataframe.gpdf.loc[0,"landuse"] = "forest"
+                self.dataframe.gpdf.loc[0, "landuse"] = "forest"
             self.dataframe.gpdf = self.dataframe.reduce_columns(attributes=[self.dataframe.key_tag])
 
         else:
@@ -33,6 +34,7 @@ class OSMAreaNatural(AbstractOSM):
 
 
 class OSMNodeNatural(AbstractOSM):
+    """Processor of the Natural Point OSM Entities"""
     def __init__(self, osm_feature: OSMObject, key_tag: str) -> None:
         self.dataframe = MyGeoDataFrame(osm_feature, key_tag)
         super(OSMNodeNatural, self).__init__(dataframe=self.dataframe)
