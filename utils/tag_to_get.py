@@ -65,12 +65,10 @@ class Queries:
     place_node_to_get = {"city", "county", "district", "islet", "square", "island", "allotments",
                          "isolated_dwelling", "hamlet", "isolated_dwelling", "locality", "neighbourhood", "quarter",
                          "suburb", "town", "village", "city_block", "borough", "state", "region", "province"}
-    place_area_to_get = {"locality", "square", "islet", "island", "allotments", "farm", "isolated_dwelling", "hamlet",
-                         "village", "town", "city_block", "neighbourhood", "quarter", "suburb", "borough", "city",
-                         "state", "region", "province", "district", "county", }
+    place_area_to_get = {"city", "county", }
     power_line_to_get = {"line"}
     power_area_to_get = {"compensator", "plant"}
-    railway_node_to_get = {"halt", "station", "tram_stop", }
+    railway_node_to_get = {"halt", "station", "tram_stop","narrow_gauge" }
     railway_line_to_get = {"funicular", "light_rail", "miniature", "narrow_gauge", "construction", "rail", "subway",
                            "tram", "platform"}
     railway_area_to_get = {"platform"}

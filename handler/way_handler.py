@@ -17,7 +17,6 @@ class OSMHandlerWay(o.SimpleHandler):
         """
         if w.tags.get("natural") in Queries.natural_line_to_get:
             OSMFactory.create_factory(osm_feature=w, key_tag="natural")
-        # TODO public_transport???
         elif w.tags.get("railway") in Queries.railway_line_to_get:
             OSMFactory.create_factory(osm_feature=w, key_tag="railway")
         elif w.tags.get('waterway') in Queries.waterway_line_to_get and "natural" not in w.tags:
@@ -30,8 +29,6 @@ class OSMHandlerWay(o.SimpleHandler):
             OSMFactory.create_factory(osm_feature=w, key_tag="aerialway")
         elif w.tags.get("barrier") in Queries.barrier_line_to_get:
             OSMFactory.create_factory(osm_feature=w, key_tag="barrier")
-        elif w.tags.get("historic") in Queries.historic_line_to_get:
-            OSMFactory.create_factory(osm_feature=w, key_tag="historic")
         elif w.tags.get("man_made") in Queries.man_made_line_to_get:
             OSMFactory.create_factory(osm_feature=w, key_tag="man_made")
         elif w.tags.get("power") in Queries.power_line_to_get:

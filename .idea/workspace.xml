@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="b19e080f-31dc-4a79-a52d-f6aa56a06cea" name="Default Changelist" comment="20230429">
+      <change afterPath="$PROJECT_DIR$/../Arcpy/processing/place_point.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Arcpy/Simplify_schemes.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Arcpy/Simplify_schemes.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Arcpy/arcpy_main.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Arcpy/arcpy_main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Arcpy/old_arcpy_main.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Arcpy/old_arcpy_main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Arcpy/processing/abstract/feature_process_factory.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Arcpy/processing/abstract/feature_process_factory.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Arcpy/processing/gdb_refresh.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Arcpy/processing/gdb_refresh.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Arcpy/processing/railway_point.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Arcpy/processing/railway_point.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/handler/area_handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/handler/area_handler.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/handler/node_handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/handler/node_handler.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/handler/way_handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/handler/way_handler.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/manipulation/export_shp.py" beforeDir="false" afterPath="$PROJECT_DIR$/manipulation/export_shp.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/manipulation/manipulate_geodataframe.py" beforeDir="false" afterPath="$PROJECT_DIR$/manipulation/manipulate_geodataframe.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/osm_features/natural.py" beforeDir="false" afterPath="$PROJECT_DIR$/osm_features/natural.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/osm_features/waterway.py" beforeDir="false" afterPath="$PROJECT_DIR$/osm_features/waterway.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/tag_to_get.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/tag_to_get.py" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Unit Test" />
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="ProjectId" id="25bA0CZ90a16pXfKJg4WxuhTOuo" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="compactDirectories" value="true" />
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="false" />
+    <option name="showLibraryContents" value="true" />
+    <option name="showMembers" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Arcpy" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Baga\egyeb\alapterkep_pyrosm\OSM_TO_MTSZ\Arcpy\processing" />
+      <recent name="D:\Baga\egyeb\alapterkep_pyrosm\OSM_TO_MTSZ\Arcpy\processing\abstract" />
+      <recent name="D:\Baga\egyeb\alapterkep_pyrosm\OSM_TO_MTSZ\Arcpy\utils_arcpro" />
+      <recent name="D:\Baga\egyeb\alapterkep_pyrosm\OSM_TO_MTSZ\Osmium\utils" />
+      <recent name="D:\Baga\egyeb\alapterkep_pyrosm\OSM_TO_MTSZ\Osmium\manipulation" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python.main">
+    <configuration name="arcpy_main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Arcpy" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="C:\Program Files\ArcGIS\Pro\bin\Python\envs\arcgispro-py3\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../Arcpy" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../Arcpy/arcpy_main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <module name="Osmium" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="C:\Users\bagam_000\anaconda3\envs\alapterkep_pyrosm\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="oklevel" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Arcpy" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="C:\Python39\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../../../kornel/oklevél/kesz/2023" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../../../kornel/oklevél/kesz/2023/oklevel.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Unittests in test.py" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <module name="Arcpy" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../Arcpy/test" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/../Arcpy/test/test.py&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Python.main" />
+      <item itemvalue="Python.arcpy_main" />
+      <item itemvalue="Python.oklevel" />
+      <item itemvalue="Python tests.Unittests in test.py" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.arcpy_main" />
+        <item itemvalue="Python.oklevel" />
+        <item itemvalue="Python tests.Unittests in test.py" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b19e080f-31dc-4a79-a52d-f6aa56a06cea" name="Default Changelist" comment="" />
+      <created>1645785187092</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1645785187092</updated>
+    </task>
+    <task id="LOCAL-00001" summary="20230429">
+      <created>1682767694457</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1682767694457</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="20230429" />
+    <option name="LAST_COMMIT_MESSAGE" value="20230429" />
+  </component>
+</project>

@@ -15,7 +15,7 @@ class OSMWayWaterway(AbstractOSM):
 
     def manipulate_dataframe(self) -> geopandas.GeoDataFrame:
         self.dataframe.gpdf = super().set_dataframe()
-        self.dataframe.gpdf = self.dataframe.extra_columns(attributes=["tunnel", "intermittent"])
+        self.dataframe.gpdf = self.dataframe.extra_columns(attributes=["tunnel"])
         self.dataframe.gpdf = self.dataframe.reduce_columns(
-            attributes=[self.dataframe.key_tag, "tunnel", "intermittent"])
+            attributes=[self.dataframe.key_tag, "tunnel"])
         return self.dataframe.gpdf

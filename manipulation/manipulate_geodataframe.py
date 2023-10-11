@@ -1,3 +1,4 @@
+import geopandas
 import geopandas as gpd
 from typing import Set
 
@@ -10,7 +11,7 @@ class MyGeoDataFrame:
 
     def __init__(self, osm_feature, key_tag: str) -> None:
         self.osm_feature = osm_feature
-        self.gpdf = gpd.GeoDataFrame(columns=["geometry"])
+        self.gpdf:geopandas.GeoDataFrame = gpd.GeoDataFrame(columns=["geometry"])
         self.key_tag = key_tag
 
     def set_projection(self, epsg: int) -> gpd.geodataframe:

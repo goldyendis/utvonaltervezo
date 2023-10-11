@@ -1,4 +1,7 @@
+import geopandas
 import os
+
+from manipulation.manipulate_geodataframe import MyGeoDataFrame
 from utils.constans import FILE_PATH, TEST
 from manipulation.abstract.export import Export
 
@@ -6,7 +9,7 @@ from manipulation.abstract.export import Export
 class ExportSHP(Export):
     """Export the data to ESRI SHP file format"""
 
-    def __init__(self, dataframe) -> None:
+    def __init__(self, dataframe: MyGeoDataFrame) -> None:
         self.dataframe = dataframe
         if TEST:
             self.file_path = f"{FILE_PATH}\\budapest"
