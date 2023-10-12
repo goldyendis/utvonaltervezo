@@ -3,19 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="b19e080f-31dc-4a79-a52d-f6aa56a06cea" name="Default Changelist" comment="20230429">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/handler/area_handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/handler/area_handler.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/handler/building_handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/handler/building_handler.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/handler/highway_line_handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/handler/highway_line_handler.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/handler/node_handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/handler/node_handler.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/handler/way_handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/handler/way_handler.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/manipulation/abstract/export.py" beforeDir="false" afterPath="$PROJECT_DIR$/manipulation/abstract/export.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/manipulation/export_shp.py" beforeDir="false" afterPath="$PROJECT_DIR$/manipulation/export_shp.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/osm_features/abstract/factory.py" beforeDir="false" afterPath="$PROJECT_DIR$/osm_features/abstract/factory.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/osm_features/abstract/super_osm_feature.py" beforeDir="false" afterPath="$PROJECT_DIR$/osm_features/abstract/super_osm_feature.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/osm_features/building.py" beforeDir="false" afterPath="$PROJECT_DIR$/osm_features/building.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/osm_features/highway.py" beforeDir="false" afterPath="$PROJECT_DIR$/osm_features/highway.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/new_typing.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/new_typing.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/tag_to_get.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/tag_to_get.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,7 +19,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../Arcpy" />
   </component>
   <component name="GitSEFilterConfiguration">
     <file-type-list>

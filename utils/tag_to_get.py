@@ -6,8 +6,9 @@ class Queries:
     aerialway_line_to_get: Set[str] = {"cable_car", "gondola", "mixed_lift", "chair_lift", "drag_lift",
                                        "j-bar", "t-bar", "platter", "rope_tow", "magic_carpet", "zip_line", "goods"}
     aeroway_node_to_get: Set[str] = {"aerodrome"}
-    aeroway_line_to_get: Set[str] = {"runway", "taxiway", }
-    aeroway_area_to_get: Set[str] = {"aerodrome", "runway", "airstrip"}
+    aeroway_line_to_get: Set[str] = {"runway", "taxiway"}
+    #TODO Apron
+    aeroway_area_to_get: Set[str] = {"aerodrome", "runway", "airstrip", "apron"}
     amenity_node_to_get: Set[str] = {"bar", "bbq", "biergarten", "bus_station", "cafe", "clinic", "doctors",
                                      "drinking_water",
                                      "fast_food", "ferry_terminal", "food_court", "fuel", "hospital", "monastery",
@@ -69,7 +70,7 @@ class Queries:
                                                 "templomtorony",
                                                 "watchtower", "weather"}
     man_made_line_to_get: Set[str] = {"cutline", "embankment", "groyne", "goods_conveyor", "pier"}
-    man_made_area_to_get: Set[str] = {"gasometer", "monitoring_station", "pier",
+    man_made_area_to_get: Set[str] = {"bridge", "gasometer", "monitoring_station", "pier",
                                       "pipeline", "pumping_station", "silo", "storage_tank", "tailings_ponds", "tower",
                                       "wastewater_plant", "water_works"}
     military_node_to_get: Set[str] = {"airfield"}
