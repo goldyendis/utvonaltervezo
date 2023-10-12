@@ -1,20 +1,21 @@
 from osmium.osm import OSMObject
 
-from manipulation.export_shp import ExportSHP
 from manipulation.manipulate_geodataframe import MyGeoDataFrame
 from osm_features.abstract.super_osm_feature import AbstractOSM
 import geopandas as gpd
 
 
 class OSMAreaBuilding(AbstractOSM):
-    """Processor of the Building Area OSM Entities"""
+    """Processor of the Building Area OSM Entities. Splitting the created GeoDataframes to multiple files. Each file
+     contain 100K row"""
+
     def __init__(self, osm_feature: OSMObject, key_tag: str, count: int = None) -> None:
         self.dataframe = MyGeoDataFrame(osm_feature, key_tag)
         super(OSMAreaBuilding, self).__init__(dataframe=self.dataframe)
         super().create_geometry()
         self.dataframe.gpdf = self.manipulate_dataframe()
-        file_number: int = (count//100000)+1
-        ExportSHP(dataframe=self.dataframe).export_feature(geom_type="area", filename=f"building_{file_number}")
+        file_number: int = (count // 100000) + 1
+        super().export_data(filename=f"building_{file_number}")
         print(f"building_{file_number} as {count} exported")
 
     def manipulate_dataframe(self) -> gpd.GeoDataFrame:

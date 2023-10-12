@@ -35,7 +35,7 @@ class OSMFactory:
                 OSMCommon(osm_feature, key_tag)
         if issubclass(type(osm_feature), Way):
             if key_tag == "highway":
-                OSMWayHighway(osm_feature, key_tag)
+                OSMWayHighway(osm_feature, key_tag, count)
             elif key_tag == "railway":
                 OSMWayRailway(osm_feature, key_tag)
             elif key_tag == "aeroway":

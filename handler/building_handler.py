@@ -8,8 +8,7 @@ class OSMHandlerBuilding(o.SimpleHandler):
 
     def __init__(self) -> None:
         super(OSMHandlerBuilding, self).__init__()
-        self.count = 1
-        print("BUILDING INIT")
+        self.count: int = 1
 
     def area(self, a: Area) -> None:
         """Osmium Area callback, only to process the Building Areas

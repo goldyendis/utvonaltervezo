@@ -9,7 +9,7 @@ class OSMHandlerWay(o.SimpleHandler):
 
     def __init__(self) -> None:
         super(OSMHandlerWay, self).__init__()
-        self.count = 0
+        self.count: int = 0
 
     def way(self, w: Way) -> None:
         """Osmium Way callback

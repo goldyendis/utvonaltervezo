@@ -9,7 +9,7 @@ class OSMHandlerArea(o.SimpleHandler):
 
     def __init__(self) -> None:
         super(OSMHandlerArea, self).__init__()
-        self.count = 0
+        self.count: int = 0
 
     def area(self, a: Area) -> None:
         """Osmium Area callback
@@ -21,9 +21,6 @@ class OSMHandlerArea(o.SimpleHandler):
             OSMFactory.create_factory(osm_feature=a, key_tag="natural")
         elif a.tags.get("highway") in Queries.highway_area_to_get:
             OSMFactory.create_factory(osm_feature=a, key_tag="highway")
-        # TODO Tesztelni, hogy ez most kell-e vagy sem
-        # elif a.tags.get("waterway") in Queries.waterway_area_to_get:
-        #     OSMFactory.create_factory(osm_feature=a, key_tag="waterway")
         elif a.tags.get("railway") in Queries.railway_area_to_get and "building" not in a.tags:
             OSMFactory.create_factory(osm_feature=a, key_tag="railway")
         elif a.tags.get("aeroway") in Queries.aeroway_area_to_get and "building" not in a.tags:

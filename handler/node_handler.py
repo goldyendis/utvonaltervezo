@@ -9,7 +9,7 @@ class OSMHandlerNode(o.SimpleHandler):
 
     def __init__(self) -> None:
         super(OSMHandlerNode, self).__init__()
-        self.count = 0
+        self.count: int = 0
 
     def node(self, n: Node) -> None:
         """Osmium Node callback

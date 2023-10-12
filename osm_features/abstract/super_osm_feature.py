@@ -17,7 +17,7 @@ class AbstractOSM(ABC):
         return self._key_tag_value
 
     @key_tag_value.setter
-    def key_tag_value(self, value):
+    def key_tag_value(self, value: str):
         self._key_tag_value = value
 
     @property
@@ -25,7 +25,7 @@ class AbstractOSM(ABC):
         return self._dataframe
 
     @dataframe.setter
-    def dataframe(self, value):
+    def dataframe(self, value: MyGeoDataFrame):
         self._dataframe = value
 
     @abstractmethod
@@ -41,7 +41,7 @@ class AbstractOSM(ABC):
         """Put geometry into the GeoDataframe geometry column
         :return: GeoPandas.GeoDataframe
         """
-        created_geometry = MyGeometry(osm_feature=self.dataframe.osm_feature).create_geometry()
+        created_geometry: MyGeometry = MyGeometry(osm_feature=self.dataframe.osm_feature).create_geometry()
         self.dataframe.gpdf.loc[0, "geometry"] = created_geometry
         self.dataframe.gpdf['geom_type'] = self.dataframe.gpdf.geometry.geom_type
         return self.dataframe.gpdf
@@ -50,11 +50,11 @@ class AbstractOSM(ABC):
         """Set the GeoDataframe columns with attributes
         :return: GeoPandas.GeoDataframe
         """
-        self.dataframe.gpdf = self.dataframe.set_key_columns()
+        self.dataframe.gpdf: geopandas.GeoDataFrame = self.dataframe.set_key_columns()
         self.dataframe.gpdf = self.dataframe.set_projection(epsg=3857)
         return self.dataframe.gpdf
 
-    def export_data(self, filename=None) -> None:
+    def export_data(self, filename: str = None) -> None:
         """Export GeoDataframe to file
         :param filename: str | The name to be export the file.
         """

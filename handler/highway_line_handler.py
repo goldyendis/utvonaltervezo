@@ -9,13 +9,12 @@ class OSMHandlerHighway(o.SimpleHandler):
 
     def __init__(self) -> None:
         super(OSMHandlerHighway, self).__init__()
-        self.count = 0
+        self.count: int = 1
 
     def way(self, w: Way) -> None:
         """Osmium Way callback, only to process the Highway Ways
         :param w: osmium.osm.Way | Immutable class object to process
         """
         if w.tags.get("highway") in Queries.highway_line_to_get:
-            OSMFactory.create_factory(osm_feature=w, key_tag="highway")
+            OSMFactory.create_factory(osm_feature=w, key_tag="highway", count=self.count)
             self.count += 1
-            print(f"Highway Line:  {self.count}")
