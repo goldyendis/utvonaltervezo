@@ -50,7 +50,7 @@ class AbstractOSM(ABC):
         """Set the GeoDataframe columns with attributes
         :return: GeoPandas.GeoDataframe
         """
-        self.dataframe.gpdf: geopandas.GeoDataFrame = self.dataframe.set_key_columns()
+        self.dataframe.gpdf = self.dataframe.set_key_columns()
         self.dataframe.gpdf = self.dataframe.set_projection(epsg=3857)
         return self.dataframe.gpdf
 

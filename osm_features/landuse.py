@@ -10,7 +10,7 @@ class OSMAreaLanduse(AbstractOSM):
         self.dataframe = MyGeoDataFrame(osm_feature, key_tag)
         super(OSMAreaLanduse, self).__init__(dataframe=self.dataframe)
         super().create_geometry()
-        self.dataframe.gpdf = self.manipulate_dataframe
+        self.dataframe.gpdf = self.manipulate_dataframe()
         super().export_data()
 
     def manipulate_dataframe(self) -> geopandas.GeoDataFrame:

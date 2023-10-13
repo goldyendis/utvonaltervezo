@@ -1,8 +1,5 @@
 from abc import ABC, abstractmethod
 
-from manipulation.export_shp import GeomType
-
-
 class Export(ABC):
     """Interface to export GeoDataframes"""
     @abstractmethod
@@ -13,7 +10,7 @@ class Export(ABC):
         """
 
     @abstractmethod
-    def export_feature(self, geom_type: GeomType, filename=None) -> None:
+    def export_feature(self, geom_type: str, filename=None) -> None:
         """
         Concrete export of the Data
         :param geom_type: GeomType | Type of the geometry to be exported

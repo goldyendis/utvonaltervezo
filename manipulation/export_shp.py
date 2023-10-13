@@ -26,20 +26,20 @@ class ExportSHP(Export):
     def export(self, filename=None) -> None:
         geometry_type = self.dataframe.gpdf['geom_type'].unique()
         if "Polygon" in geometry_type or "MultiPolygon" in geometry_type:
-            self.export_feature(geom_type=GeomType.Area, filename=filename)
+            self.export_feature(geom_type=GeomType.Area.value, filename=filename)
         elif "LineString" in geometry_type or "MultiLineString" in geometry_type:
-            self.export_feature(geom_type=GeomType.Line, filename=filename)
+            self.export_feature(geom_type=GeomType.Line.value, filename=filename)
         elif "Point" in geometry_type:
-            self.export_feature(geom_type=GeomType.Point, filename=filename)
+            self.export_feature(geom_type=GeomType.Point.value, filename=filename)
 
-    def export_feature(self, geom_type: GeomType, filename=None) -> None:
-        append: bool = os.path.exists(f"{self.file_path}\\{self.dataframe.key_tag}_{geom_type.value}.shp"
+    def export_feature(self, geom_type: str, filename=None) -> None:
+        append: bool = os.path.exists(f"{self.file_path}\\{self.dataframe.key_tag}_{geom_type}.shp"
                                       if filename is None
-                                      else f"{self.file_path}\\{filename}_{geom_type.value}.shp")
+                                      else f"{self.file_path}\\{filename}_{geom_type}.shp")
 
-        path: str = f"{self.file_path}\\{self.dataframe.key_tag}_{geom_type.value}.shp" \
+        path: str = f"{self.file_path}\\{self.dataframe.key_tag}_{geom_type}.shp" \
             if filename is None \
-            else f"{self.file_path}\\{filename}_{geom_type.value}.shp"
+            else f"{self.file_path}\\{filename}_{geom_type}.shp"
 
         try:
             self.dataframe.gpdf.to_file(path, index=False, mode="a" if append else "w",
