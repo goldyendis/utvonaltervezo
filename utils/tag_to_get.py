@@ -7,7 +7,6 @@ class Queries:
                                        "j-bar", "t-bar", "platter", "rope_tow", "magic_carpet", "zip_line", "goods"}
     aeroway_node_to_get: Set[str] = {"aerodrome"}
     aeroway_line_to_get: Set[str] = {"runway", "taxiway"}
-    #TODO Apron
     aeroway_area_to_get: Set[str] = {"aerodrome", "runway", "airstrip", "apron"}
     amenity_node_to_get: Set[str] = {"bar", "bbq", "biergarten", "bus_station", "cafe", "clinic", "doctors",
                                      "drinking_water",
